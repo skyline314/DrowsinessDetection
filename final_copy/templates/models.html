@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model AI - DrowsyAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home_style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="{{ url_for('home') }}" class="logo">DrowsyAI</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('how_it_works') }}" class="nav-link">Cara Kerja</a></li>
+                    <li><a href="{{ url_for('models') }}" class="nav-link active">Models</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">Tentang Kami</a></li>
+                    <li><a href="{{ url_for('detector') }}" class="cta-button">Mulai Deteksi</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <section class="content-section page-section">
+                <h2>Model yang Kami Latih</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <!-- <div class="feature-icon">&#128064;</div> -->
+                        <h3>Eye Status Detection (CNN)</h3>
+                        <p>
+                            Kami menggunakan <strong>Convolutional Neural Network (CNN)</strong>, sebuah model deep learning yang sangat andal untuk tugas klasifikasi gambar. Model ini dilatih untuk membedakan antara dua kondisi mata: 'Terbuka' dan 'Tertutup'. Dengan menganalisis piksel dari area mata, CNN dapat mendeteksi penutupan mata dalam waktu lama yang merupakan indikator kantuk.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- <div class="feature-icon">&#128564;</div> -->
+                        <h3>Yawning Detection (SVM)</h3>
+                        <p>
+                            Untuk mendeteksi perilaku menguap, kami mengimplementasikan <strong>Support Vector Machine (SVM)</strong>. Model ini bekerja dengan menganalisis rasio aspek mulut (Mouth Aspect Ratio - MAR). SVM dilatih untuk mengenali pola perubahan MAR yang khas saat seseorang menguap, membedakannya dari gerakan mulut biasa seperti berbicara.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <!-- <div class="feature-icon">&#128111;</div> -->
+                        <h3>Head Pose Estimation (XGBoost)</h3>
+                        <p>
+                            Posisi kepala adalah kunci lain untuk mendeteksi kantuk. Kami menggunakan <strong>XGBoost (Extreme Gradient Boosting)</strong>, model machine learning berbasis pohon keputusan yang efisien. Model ini memprediksi orientasi kepala dalam 3D (pitch, yaw, roll) berdasarkan posisi landmark wajah. Kepala yang terkulai (perubahan drastis pada 'pitch') adalah tanda kantuk yang signifikan.
+                        </p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DrowsyAI. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

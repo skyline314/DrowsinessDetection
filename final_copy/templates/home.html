@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DrowsyAI - Deteksi Kantuk Real-time</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home_style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="{{ url_for('home') }}" class="logo">DrowsyAI</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="{{ url_for('home') }}" class="nav-link active">Home</a></li>
+                    <li><a href="{{ url_for('how_it_works') }}" class="nav-link">Cara Kerja</a></li>
+                    <li><a href="{{ url_for('models') }}" class="nav-link">Models</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">Tentang Kami</a></li>
+                    <li><a href="{{ url_for('detector') }}" class="cta-button">Mulai Deteksi</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <section class="hero">
+                <div class="hero-text">
+                    <h1>Selamatkan Nyawa dengan Deteksi Kantuk Real-time</h1>
+                    <p>
+                        DrowsyAI adalah solusi canggih untuk memantau tingkat kewaspadaan pengemudi secara real-time. 
+                        Dengan teknologi AI, kami mendeteksi tanda-tanda kelelahan dan kantuk untuk mencegah kecelakaan.
+                    </p>
+                    <a href="{{ url_for('detector') }}" class="main-cta">Mulai Deteksi</a>
+                </div>
+                <div class="hero-image">
+                    <img src="{{ url_for('static', filename='driving_bg.jpg') }}" alt="Ilustrasi DrowsyAI">
+                </div>
+                </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DrowsyAI. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,9 @@
+flask
+numpy
+mediapipe
+joblib
+scikit-learn
+tensorflow
+opencv-python-headless
+gunicorn
+xgboost

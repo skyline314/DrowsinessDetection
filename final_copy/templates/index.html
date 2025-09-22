@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detector - DrowsyAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navbar yang konsisten dan responsif -->
+    <header>
+        <div class="container nav-container">
+            <a href="{{ url_for('home') }}" class="logo">DrowsyAI</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('how_it_works') }}" class="nav-link">Cara Kerja</a></li>
+                    <li><a href="{{ url_for('models') }}" class="nav-link">Models</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link">Tentang Kami</a></li>
+                    <li><a href="{{ url_for('detector') }}" class="cta-button active-detector">Mulai Deteksi</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Konten Utama Halaman Detektor Sesuai Gambar -->
+    <div class="main-container">
+        <div class="video-wrapper">
+            <div class="header-controls">
+                <h1><i class="fa-solid fa-car-on"></i> Driver Drowsiness Detector</h1>
+                <div class="control-buttons">
+                    <button id="startButton"><i class="fa-solid fa-play"></i> Start Deteksi</button>
+                    <button id="pauseButton"><i class="fa-solid fa-pause"></i> Pause Deteksi</button>
+                </div>
+            </div>
+            <div class="video-feed-container">
+                <img id="video_feed" src="{{ url_for('video_feed') }}" alt="Video Feed">
+                <div id="alert-overlay" class="alert-overlay hidden">
+                    <div class="alert-box">
+                        <h2>PERINGATAN KANTUK!</h2>
+                        <p id="alert-reason"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="status-panel">
+            <div class="status-card">
+                <h2><i class="fa-solid fa-eye"></i> Status Mata</h2>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <span class="label">Mata Kiri</span>
+                        <span class="value" id="left_eye_status">N/A</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Mata Kanan</span>
+                        <span class="value" id="right_eye_status">N/A</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-card">
+                <h2><i class="fa-solid fa-face-yawning"></i> Deteksi Menguap</h2>
+                <div class="status-grid">
+                    <div class="status-item">
+                        <span class="label">Status</span>
+                        <span class="value" id="yawn_status">NORMAL</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">MAR</span>
+                        <span class="value" id="mar_value">0.00</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="status-card">
+                <h2><i class="fa-solid fa-brain"></i> Posisi Kepala</h2>
+                <div class="status-grid full-width">
+                     <div class="status-item">
+                        <span class="label">Pitch</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="pitch_bar"></div>
+                        </div>
+                        <span class="value" id="pitch_value">0.0°</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Yaw</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="yaw_bar"></div>
+                        </div>
+                        <span class="value" id="yaw_value">0.0°</span>
+                    </div>
+                    <div class="status-item">
+                        <span class="label">Roll</span>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar" id="roll_bar"></div>
+                        </div>
+                        <span class="value" id="roll_value">0.0°</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <audio id="alarm-sound" src="{{ url_for('static', filename='alarm.mp3') }}" preload="auto"></audio>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
+

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tentang Kami - DrowsyAI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='home_style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container nav-container">
+            <a href="{{ url_for('home') }}" class="logo">DrowsyAI</a>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
+                    <li><a href="{{ url_for('how_it_works') }}" class="nav-link">Cara Kerja</a></li>
+                    <li><a href="{{ url_for('models') }}" class="nav-link">Models</a></li>
+                    <li><a href="{{ url_for('about') }}" class="nav-link active">Tentang Kami</a></li>
+                    <li><a href="{{ url_for('detector') }}" class="cta-button">Mulai Deteksi</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <section id="about" class="content-section page-section">
+                <h2>Tentang Kami</h2>
+                <p>
+                    Kami berfokus pada pengembangan teknologi inovatif untuk meningkatkan keselamatan di jalan. 
+                    Tim kami terdiri dari para ahli di bidang kecerdasan buatan dan visi komputer yang berdedikasi 
+                    untuk menciptakan solusi yang andal dan mudah digunakan bagi semua orang. DrowsyAI adalah wujud 
+                    komitmen kami untuk mengurangi angka kecelakaan yang disebabkan oleh kelelahan saat berkendara.
+                </p>
+            </section>
+
+            <section id="team" class="content-section">
+                <h2>Tim Kami</h2>
+                <div class="team-grid">
+                    <div class="team-member">
+                        <img src="{{ url_for('static', filename='kenny.jpeg') }}" alt="Foto Nama Anggota">
+                        <h3>Kenny</h3>
+                        <p>2802538630</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{ url_for('static', filename='wildan.jpeg') }}" alt="Foto Nama Anggota">
+                        <h3>Wildan</h3>
+                        <p>NIM</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="{{ url_for('static', filename='agnes.jpeg') }}" alt="Foto Nama Anggota">  
+                        <h3>Agnes</h3>
+                        <p>NIM</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 DrowsyAI. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const teamMembers = document.querySelectorAll('.team-member');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            teamMembers.forEach(member => {
+                observer.observe(member);
+            });
+        });
+    </script>
+</body>
+</html>
