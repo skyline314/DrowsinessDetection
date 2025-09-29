@@ -12,7 +12,7 @@
     <!-- Navbar yang konsisten dan responsif -->
     <header>
         <div class="container nav-container">
-            <a href="{{ url_for('home') }}" class="logo">DrowsyAI</a>
+            <a href="{{ url_for('home') }}" class="logo">DroWS</a>
             <nav>
                 <ul class="nav-menu">
                     <li><a href="{{ url_for('home') }}" class="nav-link">Home</a></li>
@@ -33,13 +33,13 @@
     <!-- Konten Utama Halaman Detektor Sesuai Gambar -->
     <div class="main-container">
         <div class="video-wrapper">
-            <div class="header-controls">
-                <h1><i class="fa-solid fa-car-on"></i> Driver Drowsiness Detector</h1>
+            <!-- <div class="header-controls">
+                <h1><i class="fa-solid fa-car-on"></i> DroWS</h1>
                 <div class="control-buttons">
                     <button id="startButton"><i class="fa-solid fa-play"></i> Start Deteksi</button>
                     <button id="pauseButton"><i class="fa-solid fa-pause"></i> Pause Deteksi</button>
                 </div>
-            </div>
+            </div> -->
             <div class="video-feed-container">
                 <img id="video_feed" src="{{ url_for('video_feed') }}" alt="Video Feed">
                 <div id="alert-overlay" class="alert-overlay hidden">
@@ -47,6 +47,12 @@
                         <h2>PERINGATAN KANTUK!</h2>
                         <p id="alert-reason"></p>
                     </div>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="control-buttons">
+                    <button id="startButton"><i class="fa-solid fa-play"></i> Start Deteksi</button>
+                    <button id="pauseButton"><i class="fa-solid fa-pause"></i> Pause Deteksi</button>
                 </div>
             </div>
         </div>

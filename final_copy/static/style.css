@@ -135,7 +135,7 @@ nav .nav-menu {
 
 .header-controls {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: var(--card-bg-color);
     padding: 16px;
