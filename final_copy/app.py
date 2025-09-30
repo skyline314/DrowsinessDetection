@@ -266,7 +266,7 @@ def start_detection():
     pause_event.clear() 
     with status_lock:
         detection_status["is_paused"] = False
-    print("▶️ [Main Thread] Deteksi DIMULAI.")
+    print(" [Main Thread] Deteksi DIMULAI.")
     return jsonify(success=True)
 
 @app.route('/pause_detection', methods=['POST'])
@@ -277,8 +277,8 @@ def pause_detection():
             "left_eye": "N/A", "right_eye": "N/A", "yawn_status": "PAUSED", "mar": 0.0,
             "pitch": 0.0, "yaw": 0.0, "roll": 0.0, "alert": False, "alert_reason": "",
             "is_paused": True
-        })
-    print("⏸️ [Main Thread] Deteksi DIJEDA.")
+        })``
+    print(" [Main Thread] Deteksi DIJEDA.")
     return jsonify(success=True)
 
 if __name__ == '__main__':
