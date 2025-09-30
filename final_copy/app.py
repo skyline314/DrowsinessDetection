@@ -26,7 +26,7 @@ HEAD_DOWN_FRAMES_THRESHOLD = 20
 EYES_CLOSED_FRAMES_THRESHOLD = 15
 PITCH_THRESHOLD_DEG = 30
 try:
-    print("⏳ [Startup] Memuat model...")
+    print("[Startup] Memuat model...")
     HEAD_POSE_MODELS = {'pitch': joblib.load('model/headposeModel/xgb_pitch_model.joblib'), 'yaw': joblib.load('model/headposeModel/xgb_yaw_model.joblib'), 'roll': joblib.load('model/headposeModel/xgb_roll_model.joblib')}
     EYE_STATUS_MODEL = load_model('model/eyeModel/eye_status_model.h5')
     YAWN_SVM_MODEL = joblib.load('model/yawnModel/svm_yawn_detector.joblib')
