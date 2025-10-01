@@ -1,0 +1,5 @@
+Step :
+1. Gunakan python 3.10.18
+2. Install library di requirements.txt
+3. Ketik CMD di path ini
+4. lalu ketik 'flask run'

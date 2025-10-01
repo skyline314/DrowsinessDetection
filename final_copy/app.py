@@ -277,7 +277,7 @@ def pause_detection():
             "left_eye": "N/A", "right_eye": "N/A", "yawn_status": "PAUSED", "mar": 0.0,
             "pitch": 0.0, "yaw": 0.0, "roll": 0.0, "alert": False, "alert_reason": "",
             "is_paused": True
-        })``
+        })
     print(" [Main Thread] Deteksi DIJEDA.")
     return jsonify(success=True)
 
